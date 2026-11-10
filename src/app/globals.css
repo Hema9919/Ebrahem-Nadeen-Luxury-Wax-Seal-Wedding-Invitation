@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=Cairo:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0b0b0b;
+  --foreground: #f8f5ef;
+  --font-alexandria: 'Alexandria', 'Cairo', system-ui, -apple-system, sans-serif;
+  --font-cairo: 'Cairo', system-ui, sans-serif;
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-playfair: 'Playfair Display', Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0b0b0b;
+  color: #f8f5ef;
+}
+
+body {
+  background-color: #0b0b0b;
+  color: #f8f5ef;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: var(--font-alexandria);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Luxury Gold Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0e0e0e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2418;
+  border-radius: 4px;
+  border: 1px solid rgba(198, 161, 91, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c6a15b;
+}
+
+/* Gold Gradient Text Utility */
+.gold-text {
+  background: linear-gradient(135deg, #fff5da 0%, #e6cc8a 35%, #c6a15b 70%, #9a7b38 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gold Foil Shimmer Animation */
+@keyframes shimmerWave {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.gold-shimmer-bg {
+  background: linear-gradient(
+    90deg,
+    rgba(198, 161, 91, 0.1) 0%,
+    rgba(230, 204, 138, 0.4) 50%,
+    rgba(198, 161, 91, 0.1) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmerWave 4s infinite linear;
+}
+
+/* 3D Transform Utilities */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-1400 {
+  perspective: 1400px;
+}
+
+/* Selection highlight in luxury gold */
+::selection {
+  background-color: #c6a15b;
+  color: #0b0b0b;
+}
